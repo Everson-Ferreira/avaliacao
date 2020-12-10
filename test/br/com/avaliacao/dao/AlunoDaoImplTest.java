@@ -32,11 +32,11 @@ public class AlunoDaoImplTest {
     public void testPesquisarPorId() throws Exception {
         System.out.println("pesquisarPorId");
         alu = alunoDaoImpl.pesquisarPorId(7);
-        mostrarAlu(alu);
+        mostrarAluno(alu);
 
     }
 
-    private void mostrarAlu(Aluno aluno) {
+    private void mostrarAluno(Aluno aluno) {
         System.out.println("Id Aluno: " + aluno.getId());
         System.out.println("Aluno: " + aluno.getNome());
         System.out.println("CPF: " + aluno.getCpf());
@@ -90,7 +90,7 @@ public class AlunoDaoImplTest {
 
         alu.setTelefone(telefones);
 
-        alunoDaoImpl.salvar(alu);
+        alunoDaoImpl.salvarProfessor(alu);
     }
 
     private Telefone gerarTelefone() {
@@ -115,31 +115,7 @@ public class AlunoDaoImplTest {
         }
     }
 
-    private void mostrarAluno(Aluno aluno) {
-        System.out.println("Id Aluno: " + aluno.getId());
-        System.out.println("Aluno: " + aluno.getNome());
-        System.out.println("CPF: " + aluno.getCpf());
-        System.out.println("RG: " + aluno.getRg());
-        System.out.println("E-mail: " + aluno.getEmail());
-        System.out.println("Matricula: " + aluno.getMatricula());
-        System.out.println("");
-        System.out.println("ID Endereço: " + aluno.getEndereco().getId());
-        System.out.println("Logradouro: " + aluno.getEndereco().getLogradouro());
-        System.out.println("Número: " + aluno.getEndereco().getNumero());
-        System.out.println("Bairro: " + aluno.getEndereco().getBairro());
-        System.out.println("Cidade: " + aluno.getEndereco().getCidade());
-        System.out.println("Estado: " + aluno.getEndereco().getEstado());
-        System.out.println("Complemento: " + aluno.getEndereco().getComplemento());
-        System.out.println("");
-        for (Telefone telefone : aluno.getTelefone()) {
-            System.out.println("");
-            System.out.println("Id Telefone " + telefone.getId());
-            System.out.println("Numero " + telefone.getNumero());
-            System.out.println("Tipo " + telefone.getTipo());
-            System.out.println("Operadora " + telefone.getOperadora());
-        }
-
-    }
+    
     @Test
 
     public void testExcluir() throws Exception {
@@ -155,7 +131,7 @@ public class AlunoDaoImplTest {
         alu.setEmail("Alterado");
         alu.setMatricula("00000");
         alu.getEndereco().setLogradouro("Bem longe");
-        alunoDaoImpl.alterarAlu(alu);
+        alunoDaoImpl.alterarAluno(alu);
 
     }
 }

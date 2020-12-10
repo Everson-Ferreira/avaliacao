@@ -24,7 +24,7 @@ public class PessoaDaoImpl implements Serializable {
     protected PreparedStatement preparando;
     protected ResultSet resultSet;
 
-    public void salvar(PessoaSenac pessoa) throws SQLException {
+    public void salvarProfessor(PessoaSenac pessoa) throws SQLException {
         String sql = "INSERT INTO pessoasenac(nome, cpf, rg, email) "
                 + "VALUES(?, ?, ?, ?)";
         try {

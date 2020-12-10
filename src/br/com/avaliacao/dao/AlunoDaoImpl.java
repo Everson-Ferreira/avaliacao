@@ -22,8 +22,8 @@ import java.util.List;
 public class AlunoDaoImpl extends PessoaDaoImpl implements Serializable {
 
     @Override
-    public void salvar(PessoaSenac pessoa) throws SQLException {
-        super.salvar(pessoa);
+    public void salvarProfessor(PessoaSenac pessoa) throws SQLException {
+        super.salvarProfessor(pessoa);
         Aluno aluno = (Aluno) pessoa;
         String sql = "INSERT INTO aluno(matricula, idPessoa) "
                 + "VALUES(?, ?)";
@@ -160,7 +160,7 @@ public class AlunoDaoImpl extends PessoaDaoImpl implements Serializable {
         return alunos;
     }
 
-    public void alterarAlu(Aluno aluno) throws SQLException {
+    public void alterarAluno(Aluno aluno) throws SQLException {
         super.alterar(aluno);
         String sql = "UPDATE aluno set matricula = ? where idPessoa = ?";
         try {

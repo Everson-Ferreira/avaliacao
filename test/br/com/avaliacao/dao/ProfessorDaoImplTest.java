@@ -5,12 +5,10 @@
  */
 package br.com.avaliacao.dao;
 
-import br.com.avaliacao.entidade.Aluno;
 import br.com.avaliacao.entidade.Endereco;
 import br.com.avaliacao.entidade.Professor;
 import br.com.avaliacao.entidade.Telefone;
 import br.com.utilitario.UtilGerador;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.Test;
@@ -57,7 +55,7 @@ public class ProfessorDaoImplTest {
         prof.setTelefone(telefones);
         professorDaoImpl = new ProfessorDaoImpl();
         
-        professorDaoImpl.salvar(prof);
+        professorDaoImpl.salvarProfessor(prof);
     }
     
     private Telefone gerarTelefone() {
@@ -73,7 +71,7 @@ public class ProfessorDaoImplTest {
     public void testPesquisarPorId() throws Exception {
         System.out.println("pesquisarPorId");
         prof = professorDaoImpl.pesquisarPorId(9);
-        mostrarProf(prof);
+        mostrarProfessor(prof);
 
     }
 
@@ -83,13 +81,13 @@ public class ProfessorDaoImplTest {
         System.out.println("");
         List<Professor> prof = professorDaoImpl.pesquisarPorNome("Nome");
         for (Professor professor : prof) {
-            mostrarProf(professor);
+            mostrarProfessor(professor);
             
         }
         
     }
     
-    private void mostrarProf(Professor prof) {
+    private void mostrarProfessor(Professor prof) {
         System.out.println("Id Professor: " + prof.getId());
         System.out.println("Professor: " + prof.getNome());
         System.out.println("CPF: " + prof.getCpf());

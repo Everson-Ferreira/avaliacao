@@ -21,8 +21,8 @@ import java.util.List;
 public class ProfessorDaoImpl extends PessoaDaoImpl implements Serializable {
 
     @Override
-    public void salvar(PessoaSenac pessoa) throws SQLException {
-        super.salvar(pessoa);
+    public void salvarProfessor(PessoaSenac pessoa) throws SQLException {
+        super.salvarProfessor(pessoa);
         Professor prof = (Professor) pessoa;
         String sql = "INSERT INTO professor(cracha, idPessoa)"
                 + " VALUES(?, ?)";

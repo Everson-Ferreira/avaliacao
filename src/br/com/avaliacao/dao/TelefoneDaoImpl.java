@@ -44,20 +44,5 @@ public class TelefoneDaoImpl implements Serializable {
         }
     }
 
-    public void alterar(Telefone telefone, int idEstrangeiro, Connection conexao) throws SQLException {
-        String sql = "UPDATE telefone SET tipo = ?, numero = ?, operadora = ? WHERE id = ?";
-
-        try {
-            preparando = conexao.prepareStatement(sql);
-            preparando.setString(1, telefone.getTipo());
-            preparando.setString(2, telefone.getNumero());
-            preparando.setString(3, telefone.getOperadora());
-            preparando.setInt(4, idEstrangeiro);
-            preparando.executeUpdate();
-
-        } catch (SQLException e) {
-            System.err.println("Erro ao alterar " + e.getMessage());
-            conexao.rollback();
-        }
-    }
+   
 }
